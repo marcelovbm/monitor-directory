@@ -1,4 +1,4 @@
-package br.com.equals.monitoradiretorio.config;
+package br.com.equals.monitordirectory.config;
 
 import java.io.IOException;
 
@@ -22,7 +22,7 @@ public class RouteConfig extends RouteBuilder {
 				.log(LoggingLevel.WARN, "IOException occurred due: ${exception.message}").transform()
 				.simple("Error ${exception.message}").to("mock:error");
 
-		from("file:///home/marcelomagrinelli/Documentos/teste?delete=true&shuffle=true&readLock=idempotent&idempotentRepository=#fileConsumed&bridgeErrorHandler=true&readLockRemoveOnCommit=true&readLockLoggingLevel=WARN")
+		from("file:///tmp?delete=true&shuffle=true&readLock=idempotent&idempotentRepository=#fileConsumed&bridgeErrorHandler=true&readLockRemoveOnCommit=true&readLockLoggingLevel=WARN")
 				.idempotentConsumer(header("CamelFileName").append(header("CamelFileLength").regexReplaceAll(" ", "")), idempotentRepository)
 				.threads(10)
 				.log("File Consumed: ${in.headers.CamelFileName}")

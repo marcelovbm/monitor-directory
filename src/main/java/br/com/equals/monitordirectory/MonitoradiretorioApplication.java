@@ -1,4 +1,4 @@
-package br.com.equals.monitoradiretorio;
+package br.com.equals.monitordirectory;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

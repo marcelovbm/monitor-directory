@@ -5,11 +5,14 @@ camel:
 spring:
   main:
     banner-mode: OFF
-  datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
-    username: postgres
-    password: mysecretpassword
+  datasource: 
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/postgres}
     driver-class-name: org.postgresql.Driver
+    hikari:
+      username: postgres
+      password: mysecretpassword
+      connection-test-query: SELECT 1
+      connection-init-sql: SELECT 1
   sql:
     init:
       platform: postgres

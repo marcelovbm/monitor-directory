@@ -1,4 +1,4 @@
-package br.com.equals.monitoradiretorio.config;
+package br.com.equals.monitordirectory.config;
 
 import javax.sql.DataSource;
 
