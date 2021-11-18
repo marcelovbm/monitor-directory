@@ -1,0 +1,15 @@
+camel:
+  springboot:
+    main-run-controller: TRUE
+
+spring:
+  main:
+    banner-mode: OFF
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: mysecretpassword
+    driver-class-name: org.postgresql.Driver
+  sql:
+    init:
+      platform: postgres
